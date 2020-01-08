@@ -9,6 +9,7 @@ class NewTodoForm extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleReset = this.handleReset.bind(this)
 
     }
     handleSubmit(e) {
@@ -23,14 +24,19 @@ class NewTodoForm extends Component {
             [e.target.name]: e.target.value
         })
     }
-
+handleReset(){
+    this.props.resetAll()
+}
     render() {
         return (
+            <div>
             <form className="Form-input" onSubmit={this.handleSubmit}>
                 <label htmlFor="task"></label>
                 <input className="Todo-input" name="task" type="text" value={this.state.task} onChange={this.handleChange} />
-                <i className="fa fa-plus edit-add-btn"></i>
+                <i className="fa fa-plus add-btn"></i>
             </form>
+            <button className="reset-btn" onClick={this.handleReset}>Reset</button>
+            </div>
         )
     }
 }

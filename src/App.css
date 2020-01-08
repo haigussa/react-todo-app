@@ -31,7 +31,7 @@ i:hover {
   background-color: azure;
   margin: 1rem;
 }
-.edit-add-btn{
+.delete-btn, .add-btn{
   width: 2rem;
   background-color: azure;
   color: #0f0e17;
@@ -44,8 +44,20 @@ i:hover {
   /* margin: auto; */
   /* text-align: center; */
 }
-.edit-add-btn:hover{
+.delete-btn:hover{
   background-color: #f25f4c ;
+  color: white;
+}
+.reset-btn{
+  background-color: red;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border-color: black;
+}
+.reset-btn:focus{
+  outline: none;
 }
 .fa-plus {
   margin-right: 14px;

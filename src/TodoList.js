@@ -12,6 +12,7 @@ export class TodoList extends Component {
         } 
         this.add = this.add.bind(this)
         this.delete= this.delete.bind(this)
+        this.resetAll = this.resetAll.bind(this)
     }
     add(newTodo){
         this.setState({
@@ -23,7 +24,11 @@ export class TodoList extends Component {
             todos: this.state.todos.filter(todo => id !== todo.id)
         })
     }
- 
+ resetAll(){
+     this.setState({
+         todos: []
+     })
+ }
     render() {
        const allTodos = this.state.todos.map(todo=>{
            return (<Todo key={todo.id} task={todo.task}  id={todo.id} deleteTodo={this.delete}/>)
@@ -34,7 +39,7 @@ export class TodoList extends Component {
                 <ul className="Todo-container">
                     {allTodos}
                 </ul>
-                <NewTodoForm addTodo={this.add} />
+                <NewTodoForm addTodo={this.add} resetAll={this.resetAll}/>
             </div>
         )
     }

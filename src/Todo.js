@@ -14,7 +14,7 @@ export class Todo extends Component {
             <div className="todo-app">
                 <li>{this.props.task}</li>
                  {/* <i className="fa fa-pencil edit-add-btn"></i> */}
-               <i className="fa fa-trash edit-add-btn" onClick={this.handleDelete}></i>
+               <i className="fa fa-trash delete-btn" onClick={this.handleDelete}></i>
                 
             </div>
         )
