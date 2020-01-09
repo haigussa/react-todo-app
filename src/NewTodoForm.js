@@ -33,7 +33,7 @@ handleReset(){
             <form className="Form-input" onSubmit={this.handleSubmit}>
                 <label htmlFor="task"></label>
                 <input className="Todo-input" name="task" type="text" value={this.state.task} onChange={this.handleChange} />
-                <i className="fa fa-plus add-btn"></i>
+                <i className="fa fa-plus "></i>
             </form>
             <button className="reset-btn" onClick={this.handleReset}>Reset</button>
             </div>

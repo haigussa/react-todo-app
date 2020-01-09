@@ -8,7 +8,7 @@ html {
 .App {
   text-align: center;
   background-color: #f25f4c;
-  width: 25rem;
+  width: 35rem;
   margin: auto;
   border-radius: 10px;
   padding: 0 1rem 1rem;
@@ -25,24 +25,20 @@ i:hover {
   padding: 1rem 1rem 0;
 }
 .Todo-input {
-  width: 20rem;
+  width: 25rem;
   border-radius: 5px;
   font-size: 1.3rem;
   background-color: azure;
   margin: 1rem;
 }
-.delete-btn, .add-btn{
-  width: 2rem;
+.delete-btn{
   background-color: azure;
   color: #0f0e17;
   border: none;
   font-size: 1.3rem;
-  padding: 0.5rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 5px;
-  /* align-content: space-between; */
-  margin: 0.3rem;
-  /* margin: auto; */
-  /* text-align: center; */
+
 }
 .delete-btn:hover{
   background-color: #f25f4c ;
@@ -60,10 +56,15 @@ i:hover {
   outline: none;
 }
 .fa-plus {
-  margin-right: 14px;
+  margin: 1rem auto 2rem;
+  padding: 1rem 1.5rem;
+  color: #0f0e17;
+  border-radius: 8px;
+ align-items: center;
 }
 .Todo-input {
   height: 2.5rem;
+  margin:  1rem auto 2rem ;
 }
 .fa-plus:hover{
   background-color: #ff8906;
@@ -80,12 +81,10 @@ i:hover {
   margin: 10px;
   color: #fffffe;
   font-weight: bold;
+  align-items: center;
 }
 .Form-input {
   display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  /* margin: 0; */
 }
 
 li {
