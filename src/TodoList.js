@@ -9,37 +9,59 @@ export class TodoList extends Component {
 
         this.state = {
             todos: []
-        } 
+        }
         this.add = this.add.bind(this)
-        this.delete= this.delete.bind(this)
+        this.delete = this.delete.bind(this)
         this.resetAll = this.resetAll.bind(this)
+        this.edit = this.edit.bind(this)
     }
-    add(newTodo){
+    add(newTodo) {
         this.setState({
             todos: [...this.state.todos, newTodo]
         })
     }
-    delete(id){
+    delete(id) {
         this.setState({
             todos: this.state.todos.filter(todo => id !== todo.id)
         })
     }
- resetAll(){
-     this.setState({
-         todos: []
-     })
- }
+    resetAll() {
+        this.setState({
+            todos: []
+        })
+    }
+    edit(id, updatedTask) {
+        const newEditedTask = this.state.todos.map(todo => {
+            if (id === todo.id) {
+                return {
+                    ...todo, task: updatedTask
+                }
+
+            } else {
+                return todo
+            }
+        })
+        this.setState({
+            todos: newEditedTask
+        })
+    }
     render() {
-       const allTodos = this.state.todos.map(todo=>{
-           return (<Todo key={todo.id} task={todo.task}  id={todo.id} deleteTodo={this.delete}/>)
-       })
+        const allTodos = this.state.todos.map(todo => {
+            return (<Todo
+                key={todo.id}
+                task={todo.task}
+                addTodo={this.add}
+                id={todo.id}
+                deleteTodo={this.delete}
+                editTodo={this.edit} />)
+        })
         return (
             <div>
                 <h1 className="App-title">Todo App</h1>
                 <ul className="Todo-container">
                     {allTodos}
                 </ul>
-                <NewTodoForm addTodo={this.add} resetAll={this.resetAll}/>
+                <NewTodoForm addTodo={this.add} resetAll={this.resetAll} />
             </div>
         )
     }
